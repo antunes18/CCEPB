@@ -4,50 +4,73 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>CCEPB</title>
   </head>
   <body>
     <div class="app">
       <header>
-        <h1>Consultar Códigos de Endereçamento Postal (CEP) do Brasil</h1>
+        <h1 title="CCEPB">Consulta de Códigos de Endereçamento Postal (CEP) do Brasil</h1>
       </header>
-      <main>
+      <main style="max-width:500px; margin:auto">
         <div class="label-input">
-          <label for="cep">CEP:</label>
+          <i class="fas fa-map-marker-alt"></i>
+          <label for="cep"></label>
           <input
             type="text"
             id="cep"
             placeholder="Digite o CEP do seu bairro"
+            autofocus
+            required
           />
-          <input type="submit" value="Consultar" />
+          <button id="btn-consultar" title="Consultar dados do CEP digitado">Consultar</button>
         </div>
         <div class="label-input">
-          <label for="logradouro">Logradouro:</label>
-          <input type="text" id="logradouro" />
+          <i class="fas fa-home"></i>
+          <label for="logradouro"></label>
+          <input type="text" id="logradouro" placeholder="Logradouro" />
         </div>
         <div class="label-input">
-          <label for="bairro">Bairro:</label>
-          <input type="text" id="bairro" />
+          <i class="fas fa-home"></i>
+          <label for="bairro"></label>
+          <input type="text" id="bairro" placeholder="Bairro" />
         </div>
         <div class="label-input">
-          <label for="localidade">Localidade:</label>
-          <input type="text" id="localidade" />
+          <i class="fas fa-city"></i>
+          <label for="cidade"></label>
+          <input type="text" id="cidade" placeholder="Cidade" />
         </div>
         <div class="label-input">
-          <label for="localidade">UF:</label>
-          <input type="text" id="uf" />
+          <i class="fas fa-map-marked-alt"></i>
+          <label for="localidade"></label>
+          <input type="text" id="uf" placeholder="UF (Unidade Federativa)" />
         </div>
         <div class="label-input">
-            <label for="cod-municipio">Código do município:</label>
-            <input type="text" id="cod-municipio" />
-          </div>
+          <i class="fas fa-qrcode"></i>
+          <label for="cod-municipio"></label>
+          <input
+            type="text"
+            id="cod-municipio"
+            placeholder="Código do município"
+          />
+        </div>
         <div class="label-input">
-          <label for="ddd">DDD:</label>
-          <input type="text" id="ddd" />
+          <i class="fas fa-mobile-alt"></i>
+          <label for="ddd"></label>
+          <input type="text" id="ddd" placeholder="DDD" />
         </div>
       </main>
     </div>
   </body>
+  <footer id="footer">
+    <p>By <a href="https://github.com/antunes18" target="__blank" title="#">antunes18</a></p>
+  </footer>
   <script src="cep-api.js"></script>
 </html>

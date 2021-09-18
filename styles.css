@@ -1,3 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d1117;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+  margin: auto;
+}
+
+main {
+  font-size: 18px;
+  margin-top: 1rem;
+}
+
+.label-input {
+  display: flex;
+  text-align: center;
+}
+
+i {
+  width: 50px;
+  padding: 12px;
+  background-color: #161b22;
+  text-align: center;
+  border-radius: 10px 0px 0px 10px;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  outline: none;
+  padding: 12px;
+}
+
+#logradouro, #bairro, #cidade, #uf, #cod-municipio, #ddd {
+  border-radius: 0px 10px 10px 0px;
+}
+
+input:focus {
+  border: 2px solid #610094;  
+}
+
+#btn-consultar {
+  padding: 0.75rem;
+  cursor: pointer;
+  background-color: #610094;
+  color: white;
+  outline: 0;
+  border: none;
+  border-radius: 0px 10px 10px 0px;
+}
+
+#btn-consultar:hover {
+  background-color: #3F0071;
+}
+
+header {
+  background-color: #161b22;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
 .label-input {
   margin-bottom: 1rem;
+}
+
+header h1 {
+  text-align: center;
+}
+
+#footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  background-color: #161b22;
+  width: 100%;
+}
+
+#footer p {
+  text-align: center;
+  text-decoration: none;
+}
+
+#footer a {
+  text-decoration: none;
+  color: #EAD41C;
+  font-size: 18px;
 }
