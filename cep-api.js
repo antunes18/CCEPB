@@ -26,7 +26,7 @@ const api = {
     const CEP_PROPS = [logradouro, bairro, uf, ibge, ddd];
 
     for (let value of CEP_PROPS) {
-      if (value === undefined) {
+      if (!value) {
         PUBLIC_PLACE.value = "Logradouro indeterminado";
         NEIGHBORHOOD.value = "Bairro indeterminado";
         CITY.value = "Cidade indeterminada";
