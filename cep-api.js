@@ -8,7 +8,7 @@ const CITY = document.getElementById("cidade");
 const FEDERATIVE_UNIT = document.getElementById("UF");
 const CITY_CODE = document.getElementById("cod-municipio");
 const DDD = document.getElementById("DDD");
-let cepValue = undefined;
+let cepValue;
 
 const api = {
   fetchCEP: (CEP) => {
@@ -23,24 +23,36 @@ const api = {
     const { uf } = data;
     const { ibge } = data;
     const { ddd } = data;
-    // console.log(logradouro, bairro, localidade, uf, ibge, ddd);
-    PUBLIC_PLACE.value = logradouro;
-    NEIGHBORHOOD.value = bairro;
-    CITY.value = localidade;
-    CITY_CODE.value = ibge;
-    FEDERATIVE_UNIT.value = uf;
-    DDD.value = ddd;
+    const CEP_PROPS = [logradouro, bairro, uf, ibge, ddd];
+
+    for (let value of CEP_PROPS) {
+      if (value === undefined) {
+        PUBLIC_PLACE.value = "Logradouro indeterminado";
+        NEIGHBORHOOD.value = "Bairro indeterminado";
+        CITY.value = "Cidade indeterminada";
+        CITY_CODE.value = "Código do munícipo indeterminado";
+        FEDERATIVE_UNIT.value = "UF indeterminada";
+        DDD.value = "DDD indeterminado";
+      } else {
+        PUBLIC_PLACE.value = logradouro;
+        NEIGHBORHOOD.value = bairro;
+        CITY.value = localidade;
+        CITY_CODE.value = ibge;
+        FEDERATIVE_UNIT.value = uf;
+        DDD.value = ddd;
+      }
+    }
   },
 };
 
-CEP_INPUT.addEventListener("keyup", function(event) {
+CEP_INPUT.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     BTN_CONSULT.click();
   }
 });
 
-BTN_CONSULT.addEventListener("click", function() {
-    cepValue = CEP_INPUT.value;
-    api.fetchCEP(cepValue);
+BTN_CONSULT.addEventListener("click", function () {
+  cepValue = CEP_INPUT.value;
+  api.fetchCEP(cepValue);
 });
