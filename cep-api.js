@@ -33,6 +33,13 @@ const api = {
   },
 };
 
+CEP_INPUT.addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    BTN_CONSULT.click();
+  }
+});
+
 BTN_CONSULT.addEventListener("click", function() {
     cepValue = CEP_INPUT.value;
     api.fetchCEP(cepValue);
